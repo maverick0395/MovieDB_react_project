@@ -1,6 +1,6 @@
 import {FC, useEffect, useState} from "react";
 
-import {Movie, Pagination} from "../../components";
+import {Movie, Pagination, StatusCheck} from "../../components";
 import {useCustomSelector, useCustomDispatch, useMyDispatch} from "../../hooks";
 import {clearMovies, getAllMovies} from "../../store"
 import css from "./Movies.module.css";
@@ -27,8 +27,7 @@ const Movies: FC = () => {
 
     return (
         <div className={css.movies_page}>
-            {status === 'pending' && <h1>Loading</h1>}
-            {status === 'rejected' && <h1>{error}</h1>}
+            <StatusCheck status={status} error={error}/>
             <div className={css.movies_catalogue}>
                 {movies && movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
             </div>

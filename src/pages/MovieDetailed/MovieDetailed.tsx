@@ -2,7 +2,7 @@ import {FC, useEffect} from "react";
 import {NavLink, useParams} from "react-router-dom";
 import StarRatings from "react-star-ratings";
 
-import {Actor} from "../../components";
+import {Actor, StatusCheck} from "../../components";
 import {useCustomDispatch, useCustomSelector, useMyDispatch} from "../../hooks";
 import {clearMovieDetails, getCast, getMovieDetails} from "../../store";
 import {bigImageBaseURL} from "../../constants/image.base.url";
@@ -25,8 +25,7 @@ const MovieDetailed: FC = () => {
 
     return (
         <div>
-            {status === 'pending' && <h1>Loading</h1>}
-            {status === 'rejected' && <h1>{error}</h1>}
+            <StatusCheck status={status} error={error}/>
             {movieDetails &&
             <div className={css.details_wrapper}>
                 {movieDetails.poster_path && <img src={`${bigImageBaseURL}${movieDetails.poster_path}`} alt="Movie poster"/>}

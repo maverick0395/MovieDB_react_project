@@ -1,6 +1,6 @@
 import {FC, useEffect, useState} from "react";
 
-import {Movie, Pagination, SearchForm} from "../../components";
+import {Movie, Pagination, SearchForm, StatusCheck} from "../../components";
 import {useCustomDispatch, useCustomSelector, useMyDispatch} from "../../hooks";
 import {clearMovies, getMoviesByQuery} from "../../store";
 import css from "../Movies/Movies.module.css";
@@ -33,8 +33,7 @@ const Search: FC = () => {
     return (
         <div className={css.movies_page}>
             <SearchForm updateQuery={updateQuery}/>
-            {status === 'pending' && <h1>Loading</h1>}
-            {status === 'rejected' && <h1>{error}</h1>}
+            <StatusCheck status={status} error={error}/>
             <div className={css.movies_catalogue}>
                 {movies && movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
             </div>
