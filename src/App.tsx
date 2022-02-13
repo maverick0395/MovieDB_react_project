@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from "react-router-dom";
+import {FC} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {Header} from "./components";
+import {Movies, Genres, MovieDetailed, MoviesByGenre, MoviesWithActor, Search} from "./pages";
+import css from "./App.module.css";
+
+
+
+const App: FC = () => {
+
+    return (
+        <div className={css.app}>
+            <Routes>
+                <Route path={'/'} element={<Header/>}>
+                    <Route path={'/movies'} element={<Movies/>}/>
+                    <Route path={'/movies/:id'} element={<MovieDetailed/>}/>
+                    <Route path={'/movies/actor/:actorId'} element={<MoviesWithActor/>}/>
+                    <Route path={'/genres'} element={<Genres/>}/>
+                    <Route path={'/genres/:genreId'} element={<MoviesByGenre/>}/>
+                    <Route path={'/search'} element={<Search/>}/>
+                </Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

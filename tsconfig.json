@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "plugins": [{"name": "typescript-plugin-css-modules"}],
     "target": "es5",
     "lib": [
       "dom",
@@ -11,6 +12,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "useUnknownInCatchVariables": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",

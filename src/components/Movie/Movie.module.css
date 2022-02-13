@@ -1,0 +1,17 @@
+.movie_card {
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+}
+
+.movie_card h1 {
+    color: black;
+    font-size: 30px;
+}
+
+.movie_card:hover {
+    background: powderblue;
+}

@@ -1,0 +1,27 @@
+.movies_page {
+    min-height: 100vh;
+
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+
+
+.page_header {
+    align-self: center;
+
+    color: black;
+}
+
+.movies_catalogue {
+    padding: 0 30px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}

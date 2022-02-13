@@ -1,0 +1,12 @@
+.genre_link h1:hover {
+    border-radius: 10px;
+    background: deepskyblue;
+}
+
+.genre_link h1 {
+    width: fit-content;
+
+    padding: 5px;
+
+    color: lightcyan;
+}

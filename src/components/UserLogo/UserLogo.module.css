@@ -1,0 +1,18 @@
+.user_logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: lightgoldenrodyellow;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: mediumpurple;
+    font-size: 24px;
+    font-weight: bold;
+
+    position: absolute;
+    right: 50px;
+    z-index: 2;
+}
